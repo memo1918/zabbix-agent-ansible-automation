@@ -11,7 +11,7 @@ Ansible playbooks can be run for Debian and Red Hat based systems
 
 1. Clone the repository:
     ```sh
-    git clone 
+    git clone https://github.com/memo1918/zabbix-agent-ansible-automation.git
     cd zabbix_ansible
     ```
 
