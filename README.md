@@ -12,7 +12,7 @@ Ansible playbooks can be run for Debian and Red Hat based systems
 1. Clone the repository:
     ```sh
     git clone https://github.com/memo1918/zabbix-agent-ansible-automation.git
-    cd zabbix_ansible
+    cd zabbix-agent-ansible-automation
     ```
 
 2. Install Python dependencies:
