@@ -1,6 +1,7 @@
-# Zabbix Ansible Automation
+# Zabbix Agent2 Ansible Automation
 
-Ansible playbooks can be run for Debian and Red Hat based systems 
+Currently set for Zabbix 6.4, this can be changed by updating urls in the ansible playbook.
+Ansible playbooks can be run for Debian and Red Hat based systems.
 
 ### Prerequisites
 
