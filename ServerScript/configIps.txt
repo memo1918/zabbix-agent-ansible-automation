@@ -1,0 +1,13 @@
+# Do not place spaces between words
+
+# To get groupids and templateids, navigate to Zabbix->Data collection and select the group/template you want to include.
+# in the URL, you should see the id (Couldn't find any better way).
+# Seperate id's with comma
+groupids:2
+templateids:10001,10318
+
+# Sever is the where the zabbix-server is running
+Server:127.0.0.1
+
+# Denote hosts as "name:ip"
+Test_server:127.0.0.1

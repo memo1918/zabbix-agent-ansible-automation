@@ -1,0 +1,18 @@
+---
+# Adds zabbix user to docker group and restarts zabbix-agent2 service. 
+# Only neccessary for monitoring docker containers.
+- hosts: all
+  become: true 
+  tasks:
+
+    - name: Add zabbix user to docker group
+      user:
+        name: zabbix
+        groups: docker
+        append: yes  
+
+    - name: Restart services
+      ansible.builtin.systemd:
+        name: zabbix-agent2
+        state: restarted
+        enabled: yes

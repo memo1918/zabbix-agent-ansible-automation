@@ -1,0 +1,31 @@
+---
+
+- hosts: all
+  become: true 
+  vars:
+    sv_ip: 128.0.0.1
+  tasks:
+
+    - name: Reminder pause
+      ansible.builtin.pause:  
+        prompt: "Make sure that the 'sv_ip' in the playbook has been changed to the correct ip. Press any key to continue..."
+
+
+    - name: change "Server"
+      lineinfile:
+        path: /etc/zabbix/zabbix_agent2.conf  
+        regexp: '^Server='
+        line: Server= {{ sv_ip }}
+
+    - name: change "ServerActive"
+      lineinfile:
+        path: /etc/zabbix/zabbix_agent2.conf  
+        regexp: '^ServerActive='
+        line: ServerActive= {{ sv_ip }}
+
+    - name: Restart services
+      ansible.builtin.systemd:
+        name: zabbix-agent2
+        state: restarted
+        enabled: yes
+
